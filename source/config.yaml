@@ -1,0 +1,38 @@
+# ================= 数据路径 =================
+dataset: adni2
+prefix: adni2
+pkl_path: r'D:\zyc\pythonProject\AAL90_Yeo7_Index0to7.pkl'
+mni_path: r'D:\zyc\pythonProject\aal90_mni.npy'
+
+# ================= 训练设置 =================
+gpu: 0
+seed: 42
+k_folds: [1,2,3,4,5,6,7,8,9,10]
+batch_size: 32
+start_epoch: 0
+end_epoch: 100
+save_freq: 50
+
+# ================= 优化器 =================
+lr: 0.0005
+weight_decay: 0.05
+lr_min: 0.000001
+momentum: 0.5
+lr_decay_rate: 0.0001
+
+# ================= 模型参数 =================
+num_rois: 90
+num_modules: 8
+time_points: 128
+window_size: 64
+stride: 32
+
+embed_dim: 32       # 特征维度
+num_heads: 4
+dropout: 0.2
+top_k_ratio: 0.3    # Top-K 构图比例
+
+# ================= 其他 =================
+pre_trained: False
+weights_path: ''
+work_dir: './logging'
